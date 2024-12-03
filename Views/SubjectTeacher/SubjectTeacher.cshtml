@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Task1.Models.SubjectTeacher>
+
+@{
+    ViewData["Title"] = "SubjectTeacher";
+}
+
+<h1>SubjectTeacher</h1>
+
+<table id="datatable">
+    <thead>
+        <tr>
+            <th>Subject Name</th>
+            <th>Class</th>
+            <th>Teacher Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var st in Model)
+        {
+            <tr>
+                <td>@st.Subject.SubjectName</td> <!-- Assuming "Name" is the property for subject name -->
+                <td>@st.Subject.Class</td>
+                <td>@st.Teacher.TeacherName</td> <!-- Assuming "Name" is the property for teacher name -->
+            </tr>
+        }
+    </tbody>
+</table>
